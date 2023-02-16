@@ -1,0 +1,7 @@
+const tribonacci = (n, mem={}) => {
+  if (n <= 1) return 0;
+  if (n === 2) return 1;
+  if (n in mem) return mem[n];
+  mem[n] = tribonacci(n - 1, mem) + tribonacci(n - 2, mem) + tribonacci(n - 3, mem);
+  return mem[n];
+};
